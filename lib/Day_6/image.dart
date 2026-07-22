@@ -8,20 +8,24 @@ class ImageCountainerDay6 extends StatelessWidget {
     return Scaffold(
       // app bar buat header atau paling atas
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 238, 135, 1), //warna
+        backgroundColor: const Color.fromARGB(255, 0, 253, 232), //warna
         title: Text('Image Countainer Day 6'), //kalimat apa yangmau ada
         centerTitle: false, //naro text dmna mau nya
         actions: [Text("bar")], //buat yang dikanan atas
         //Image(gambar
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center, //buat kekiri kekanan
         children: [
+          Text("Uzimaki Naruto", style: TextStyle(fontSize: 20)),
           Container(
-            height: 220,
-            width: 540,
+            height: 200,
+            width: 900,
             decoration: BoxDecoration(
+              shape: BoxShape.circle,
               image: DecorationImage(
-                image: AssetImage("assets/Images/LOLO.jpeg"),
+                image: AssetImage("assets/Images/Naruto_Uzumaki21.webp"),
+                alignment: Alignment.center,
               ),
             ),
           ),

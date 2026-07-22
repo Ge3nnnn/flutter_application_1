@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Day_6/centrer.dart';
 import 'package:flutter_application_1/Day_6/containerday6.dart';
+import 'package:flutter_application_1/Day_6/expanded.dart';
 import 'package:flutter_application_1/Day_6/image.dart';
 import 'package:flutter_application_1/Day_6/layouting_day6.dart';
 import 'package:flutter_application_1/Tugas/Tugas1_flutter.dart';
@@ -37,7 +39,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: ImageCountainerDay6()
+      home: ImageCountainerDay6(),
     );
   }
 }
