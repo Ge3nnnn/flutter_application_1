@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Day_6/containerday6.dart';
+import 'package:flutter_application_1/Day_6/image.dart';
+import 'package:flutter_application_1/Day_6/layouting_day6.dart';
+import 'package:flutter_application_1/Tugas/Tugas1_flutter.dart';
 import 'package:flutter_application_1/day_5/layouting_day5.dart';
 import 'package:flutter_application_1/day_5/scafold.dart';
 import 'package:flutter_application_1/day_5/styleing.dart';
@@ -33,7 +37,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: StyleingDay5()
+      home: ImageCountainerDay6()
     );
   }
 }

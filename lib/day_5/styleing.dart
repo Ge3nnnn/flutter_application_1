@@ -6,17 +6,17 @@ class StyleingDay5 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // app bar buat header atau paling atas
+      // Title bar
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 159, 238, 0), //warna
-        title: Text('Hallo'), //kalimat apa yangmau ada
-        centerTitle: false, //naro text dmna mau nya
-        actions: [Text("Notification bar")], //buat yang dikanan atas
-        leading: Icon(Icons.arrow_back_ios), //buat tombol back
+        backgroundColor: Colors.red, //warna
+        title: Text('Profil Saya'), //kalimat apa yangmau ada
+        centerTitle: true, //Ketengahin
+        leading: Icon(Icons.arrow_back_ios),
       ),
-      // buat isi dibawah (selain di header)
+
+      // Body bar
       body:
-          // atas bawah
+          // column
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
             // spacing: 0, //spasinya (perkata)
@@ -34,6 +34,10 @@ class StyleingDay5 extends StatelessWidget {
                   backgroundColor: Colors.cyan,
                   fontStyle: FontStyle.italic,
                 ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [Icon(Icons.location_on), Text('Jakarta Pusat')],
               ),
             ],
           ),
