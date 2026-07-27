@@ -17,7 +17,6 @@ class Tugas3Flutter extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
-        physics: NeverScrollableScrollPhysics(),
         padding: EdgeInsets.all(8),
         child: Column(
           children: [
@@ -30,14 +29,14 @@ class Tugas3Flutter extends StatelessWidget {
                 ),
                 margin: EdgeInsets.all(9),
                 height: 400,
-                width: 500,
+                width: 400,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Text(
-                        "Pendaftaran Akun Sekolah",
+                        "Pendaftaran Akun Siswa",
                         style: TextStyle(
                           fontSize: 25,
                           fontWeight: FontWeight.bold,
@@ -66,7 +65,6 @@ class Tugas3Flutter extends StatelessWidget {
                           ),
                         ),
                       ),
-
                       SizedBox(height: 15),
                       TextField(
                         decoration: InputDecoration(
@@ -91,7 +89,7 @@ class Tugas3Flutter extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(height: 10),
+                      SizedBox(height: 15),
                       TextField(
                         decoration: InputDecoration(
                           filled: true,
@@ -109,15 +107,70 @@ class Tugas3Flutter extends StatelessWidget {
                 ),
               ),
             ),
-
-            Text(
-              "SEGERAKAN DAFTARKAN ANAKMU KESEKOLAH",
-              style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-            ),
+            SizedBox(height: 20),
+            Text("Segerakann!!!", style: TextStyle(fontSize: 30)),
+            SizedBox(height: 20),
             GridView.count(
-              crossAxisCount: 6,
+              crossAxisCount: 2,
+              physics: NeverScrollableScrollPhysics(),
+              mainAxisSpacing: 10,
+              shrinkWrap: true,
+              crossAxisSpacing: 10,
               children: [
-                Image(image: AssetImage("assets/Images/gambar toko.png")),
+                Container(
+                  height: 20,
+                  width: 20,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage("assets/Images/sekolah1.jpg"),
+                    ),
+                  ),
+                ),
+                Container(
+                  height: 20,
+                  width: 20,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage("assets/Images/sekolah2.jpg"),
+                    ),
+                  ),
+                ),
+                Container(
+                  height: 20,
+                  width: 20,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage("assets/Images/sekolah3.jpg"),
+                    ),
+                  ),
+                ),
+                Container(
+                  height: 20,
+                  width: 20,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage("assets/Images/sekolah4.jpg"),
+                    ),
+                  ),
+                ),
+                Container(
+                  height: 20,
+                  width: 20,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage("assets/Images/sekolah5.jpg"),
+                    ),
+                  ),
+                ),
+                Container(
+                  height: 20,
+                  width: 20,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage("assets/Images/sekolahrakyat.jpg"),
+                    ),
+                  ),
+                ),
               ],
             ),
           ],
