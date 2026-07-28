@@ -42,7 +42,7 @@ class _IconButtonDay8State extends State<IconButtonDay8> {
             // text button
             TextButton(
               onPressed: () {
-                print("asdassd");
+                debugPrint("asdassd");
               },
               child: Text("Selengkapnya"),
             ),
@@ -58,7 +58,10 @@ class _IconButtonDay8State extends State<IconButtonDay8> {
               onTap: () {
                 debugPrint("klick gambar");
               },
-              child: Text("asddasasddasasd"),
+              child: Text(
+                "asddasasddasasd",
+                style: TextStyle(color: Colors.cyan),
+              ),
             ),
 
             // gesture Detector

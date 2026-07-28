@@ -7,6 +7,9 @@ class ContainerDay6 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadiusGeometry.circular(700),
+        ),
         backgroundColor: const Color.fromARGB(255, 255, 0, 0),
         title: Text("Container Day 666", style: TextStyle(color: Colors.white)),
         centerTitle: true,

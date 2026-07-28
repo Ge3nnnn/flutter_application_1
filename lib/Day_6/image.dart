@@ -25,6 +25,7 @@ class ImageCountainerDay6 extends StatelessWidget {
               shape: BoxShape.circle,
               image: DecorationImage(
                 image: AssetImage("assets/Images/Naruto_Uzumaki21.webp"),
+                fit: BoxFit.contain,
                 alignment: Alignment.center,
               ),
             ),
