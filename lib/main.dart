@@ -1,13 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Day_8/button.dart';
+import 'package:flutter_application_1/Day_8/stateful_angka.dart';
+import 'package:flutter_application_1/Day_11/contohome.dart';
+import 'package:flutter_application_1/Day_11/routing.dart';
 import 'package:flutter_application_1/Day_6/centrer.dart';
 import 'package:flutter_application_1/Day_6/containerday6.dart';
 import 'package:flutter_application_1/Day_6/expanded.dart';
 import 'package:flutter_application_1/Day_6/image.dart';
 import 'package:flutter_application_1/Day_6/layouting_day6.dart';
+import 'package:flutter_application_1/Day_10/counter.dart';
+import 'package:flutter_application_1/Day_10/showimages.dart';
 import 'package:flutter_application_1/Tugas/Tugas1_flutter.dart';
+import 'package:flutter_application_1/Tugas/Tugas2_Flutter.dart';
+import 'package:flutter_application_1/Tugas/oTugas6_Flutter.dart';
+import 'package:flutter_application_1/Tugas/tugas3_flutter.dart';
+import 'package:flutter_application_1/Tugas/tugas4_flutter.dart';
+import 'package:flutter_application_1/Tugas/tugas5__flutter.dart';
+import 'package:flutter_application_1/Tugas/tugas6_flutter.dart';
 import 'package:flutter_application_1/day_5/layouting_day5.dart';
 import 'package:flutter_application_1/day_5/scafold.dart';
 import 'package:flutter_application_1/day_5/styleing.dart';
+import 'package:flutter_application_1/day_7/gridview.dart';
+import 'package:flutter_application_1/day_7/listviewbiasa.dart';
+import 'package:flutter_application_1/day_7/scroll.dart';
+import 'package:flutter_application_1/day_7/stack.dart';
+import 'package:flutter_application_1/day_7/textview.dart';
 
 void main() {
   runApp(const MyApp());
@@ -39,7 +56,13 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: ImageCountainerDay6(),
+      // Push Named
+      // initialRoute: "/",
+      // routes: {
+      //   "/": (context) => RoutingDay11(),
+      //   "/home": (context) => HomeTestDay11(),
+      // },
+      home: Tugas6Ynaglain(),
     );
   }
 }
