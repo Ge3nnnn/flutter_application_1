@@ -226,6 +226,7 @@ class Tugas6Ynaglain extends StatelessWidget {
                   ],
                 ),
               ),
+              SizedBox(height: 15),
               Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: Text(
@@ -243,3 +244,7 @@ class Tugas6Ynaglain extends StatelessWidget {
     );
   }
 }
+
+
+
+
