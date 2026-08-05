@@ -13,39 +13,11 @@ class CreateAccountPage extends StatelessWidget {
         child: Center(
           child: Column(
             children: [
-              TextField(
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  hintText: "Email atau nomor ponsel",
-                  hintStyle: GoogleFonts.istokWeb(
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
-                    color: const Color(0xFF888888),
-                  ),
-                ),
-              ),
-              TextField(
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  hintText: "Password",
-                  hintStyle: GoogleFonts.istokWeb(
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
-                    color: const Color(0xFF888888),
-                  ),
-                ),
-              ),
-              TextField(
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  hintText: "Konfirmasi Password",
-                  hintStyle: GoogleFonts.istokWeb(
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
-                    color: const Color(0xFF888888),
-                  ),
-                ),
-              ),
+              createAccaoun("Email atau Nomor Ponsel"),
+              createAccaoun("Buat Password"),
+              createAccaoun("Konfirmasi Password"),
+              createAccaoun("Username"),
+
               Row(
                 children: [
                   ElevatedButton(
@@ -67,6 +39,20 @@ class CreateAccountPage extends StatelessWidget {
               ),
             ],
           ),
+        ),
+      ),
+    );
+  }
+
+  TextField createAccaoun(Text) {
+    return TextField(
+      decoration: InputDecoration(
+        border: InputBorder.none,
+        hintText: Text,
+        hintStyle: GoogleFonts.istokWeb(
+          fontSize: 14,
+          fontWeight: FontWeight.bold,
+          color: const Color(0xFF888888),
         ),
       ),
     );

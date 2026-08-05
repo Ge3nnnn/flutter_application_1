@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Day_10/counter.dart';
+
 import 'package:flutter_application_1/Day_11/Create_Acc.dart';
 import 'package:flutter_application_1/Day_11/lupapasword.dart';
+import 'package:flutter_application_1/Day_13/botNavigation.dart';
+import 'package:flutter_application_1/Day_13/drawer.dart';
+import 'package:flutter_application_1/Tugas/tugas7_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Tugas6Ynaglain extends StatelessWidget {
@@ -38,17 +41,7 @@ class Tugas6Ynaglain extends StatelessWidget {
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(10.0),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                      hintText: "Mobile number or email address",
-                      hintStyle: GoogleFonts.istokWeb(
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                        color: const Color(0xFF888888),
-                      ),
-                    ),
-                  ),
+                  child: textField("Nomor ponsel atau alamat email"),
                 ),
               ),
               SizedBox(height: 10),
@@ -64,17 +57,7 @@ class Tugas6Ynaglain extends StatelessWidget {
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(10.0),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                      hintText: "Password",
-                      hintStyle: GoogleFonts.istokWeb(
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                        color: const Color(0xFF888888),
-                      ),
-                    ),
-                  ),
+                  child: textField("Kata sandi"),
                 ),
               ),
               SizedBox(height: 10),
@@ -82,7 +65,7 @@ class Tugas6Ynaglain extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => CounterDay10()),
+                    MaterialPageRoute(builder: (context) => BottomNavDay13()),
                   );
                 },
                 child: Container(
@@ -109,7 +92,7 @@ class Tugas6Ynaglain extends StatelessWidget {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => LupaPasswordPage()),
+                    MaterialPageRoute(builder: (context) => DrawerDay13()),
                   );
                 },
                 child: Text(
@@ -153,7 +136,7 @@ class Tugas6Ynaglain extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => CreateAccountPage(),
+                          builder: (context) => Tugas7Flutter(),
                         ),
                       );
                     },
@@ -243,8 +226,18 @@ class Tugas6Ynaglain extends StatelessWidget {
       ),
     );
   }
+
+  TextField textField(String text) {
+    return TextField(
+      decoration: InputDecoration(
+        border: InputBorder.none,
+        hintText: text,
+        hintStyle: GoogleFonts.istokWeb(
+          fontSize: 14,
+          fontWeight: FontWeight.bold,
+          color: const Color(0xFF888888),
+        ),
+      ),
+    );
+  }
 }
-
-
-
-

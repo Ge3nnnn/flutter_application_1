@@ -12,39 +12,9 @@ class LupaPasswordPage extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-            TextField(
-              decoration: InputDecoration(
-                border: InputBorder.none,
-                hintText: "Password Lama",
-                hintStyle: GoogleFonts.istokWeb(
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold,
-                  color: const Color(0xFF888888),
-                ),
-              ),
-            ),
-            TextField(
-              decoration: InputDecoration(
-                border: InputBorder.none,
-                hintText: "Password Baru",
-                hintStyle: GoogleFonts.istokWeb(
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold,
-                  color: const Color(0xFF888888),
-                ),
-              ),
-            ),
-            TextField(
-              decoration: InputDecoration(
-                border: InputBorder.none,
-                hintText: "Konfirmasi Password Baru",
-                hintStyle: GoogleFonts.istokWeb(
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold,
-                  color: const Color(0xFF888888),
-                ),
-              ),
-            ),
+            newPasswordColector("Password lama"),
+            newPasswordColector("Password Baru"),
+            newPasswordColector("Konfirmasi Password Baru"),
             Row(
               children: [
                 ElevatedButton(
@@ -65,6 +35,20 @@ class LupaPasswordPage extends StatelessWidget {
               ],
             ),
           ],
+        ),
+      ),
+    );
+  }
+
+  TextField newPasswordColector(text) {
+    return TextField(
+      decoration: InputDecoration(
+        border: InputBorder.none,
+        hintText: text,
+        hintStyle: GoogleFonts.istokWeb(
+          fontSize: 14,
+          fontWeight: FontWeight.bold,
+          color: const Color(0xFF888888),
         ),
       ),
     );
