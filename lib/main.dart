@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Day_11/DRY.dart';
+import 'package:flutter_application_1/Day_13/botNavigation.dart';
+import 'package:flutter_application_1/Day_13/drawer.dart';
+import 'package:flutter_application_1/Day_17/service/prefference_handle.dart';
+import 'package:flutter_application_1/Day_17/views/splash_screen_day17.dart';
 import 'package:flutter_application_1/Day_8/button.dart';
 import 'package:flutter_application_1/Day_8/stateful_angka.dart';
 import 'package:flutter_application_1/Day_11/contohome.dart';
@@ -12,11 +17,16 @@ import 'package:flutter_application_1/Day_10/counter.dart';
 import 'package:flutter_application_1/Day_10/showimages.dart';
 import 'package:flutter_application_1/Tugas/Tugas1_flutter.dart';
 import 'package:flutter_application_1/Tugas/Tugas2_Flutter.dart';
-import 'package:flutter_application_1/Tugas/oTugas6_Flutter.dart';
+import 'package:flutter_application_1/Tugas/Tugas8_Flutter.dart';
+import 'package:flutter_application_1/Tugas/Tugas_11/service/prefference_tugas.dart';
+import 'package:flutter_application_1/Tugas/Tugas_11/views/splash_screen_tugas11.dart';
+import 'package:flutter_application_1/Tugas/tugas10_Flutter.dart';
+import 'package:flutter_application_1/Tugas/tugas6_flutter_facebook.dart';
 import 'package:flutter_application_1/Tugas/tugas3_flutter.dart';
 import 'package:flutter_application_1/Tugas/tugas4_flutter.dart';
 import 'package:flutter_application_1/Tugas/tugas5__flutter.dart';
-import 'package:flutter_application_1/Tugas/tugas6_flutter.dart';
+import 'package:flutter_application_1/Tugas/cobasendiri_tugas6_flutter.dart';
+import 'package:flutter_application_1/Tugas/tugas7_flutter.dart';
 import 'package:flutter_application_1/day_5/layouting_day5.dart';
 import 'package:flutter_application_1/day_5/scafold.dart';
 import 'package:flutter_application_1/day_5/styleing.dart';
@@ -25,8 +35,12 @@ import 'package:flutter_application_1/day_7/listviewbiasa.dart';
 import 'package:flutter_application_1/day_7/scroll.dart';
 import 'package:flutter_application_1/day_7/stack.dart';
 import 'package:flutter_application_1/day_7/textview.dart';
+import 'package:intl/date_symbol_data_local.dart';
 
-void main() {
+void main() async {
+  await initializeDateFormatting("id_ID", null);
+  WidgetsFlutterBinding.ensureInitialized();
+  await PrefferenceHandler.init();
   runApp(const MyApp());
 }
 
@@ -38,6 +52,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -57,12 +72,12 @@ class MyApp extends StatelessWidget {
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
       // Push Named
-      // initialRoute: "/",
-      // routes: {
-      //   "/": (context) => RoutingDay11(),
-      //   "/home": (context) => HomeTestDay11(),
-      // },
-      home: Tugas6Ynaglain(),
+      initialRoute: "/",
+      routes: {
+        "/": (context) => SplashScreenTugasDay17(),
+        "/home": (context) => HomeTestDay11(),
+      },
+      // home: Tugas7Flutter(),
     );
   }
 }
