@@ -77,17 +77,20 @@ class Tugas9FlutterLv3Day16 extends StatelessWidget {
       ),
     ];
     return Scaffold(
-      body: ListView.builder(
-        itemCount: namaMainan.length,
-        itemBuilder: (BuildContext context, int index) {
-          return Card(
-            child: ListTile(
-              title: Text(namaMainan[index].nama),
-              subtitle: Text(namaMainan[index].deskripsi),
-              trailing: Image.network(namaMainan[index].gambar),
-            ),
-          );
-        },
+      body: Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: ListView.builder(
+          itemCount: namaMainan.length,
+          itemBuilder: (BuildContext context, int index) {
+            return Card(
+              child: ListTile(
+                title: Text(namaMainan[index].nama),
+                subtitle: Text(namaMainan[index].deskripsi),
+                trailing: Image.network(namaMainan[index].gambar),
+              ),
+            );
+          },
+        ),
       ),
     );
   }

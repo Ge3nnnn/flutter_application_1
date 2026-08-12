@@ -1,19 +1,22 @@
 import 'package:flutter/material.dart';
+
+import 'package:flutter_application_1/Day_17/service/prefference_handle.dart';
+
 import 'package:flutter_application_1/Day_18/views/login_day18.dart';
-import 'package:flutter_application_1/Tugas/Tugas_11/service/prefference_tugas.dart';
+
 import 'package:flutter_application_1/Tugas/Tugas_11/views/home_page.dart';
-import 'package:flutter_application_1/Tugas/Tugas_11/views/login_page.dart';
+
 import 'package:flutter_application_1/extension/navigator.dart';
 import 'package:lottie/lottie.dart';
 
-class SplashScreenTugasDay17 extends StatefulWidget {
-  const SplashScreenTugasDay17({super.key});
+class SplashScreenDay17 extends StatefulWidget {
+  const SplashScreenDay17({super.key});
 
   @override
-  State<SplashScreenTugasDay17> createState() => _SplashScreenTugasDay17State();
+  State<SplashScreenDay17> createState() => _SplashScreenDay17State();
 }
 
-class _SplashScreenTugasDay17State extends State<SplashScreenTugasDay17> {
+class _SplashScreenDay17State extends State<SplashScreenDay17> {
   @override
   void initState() {
     super.initState();
@@ -21,8 +24,8 @@ class _SplashScreenTugasDay17State extends State<SplashScreenTugasDay17> {
   }
 
   void goToLogin() async {
-    await Future.delayed(Duration(seconds: 3));
-    if (PrefferenceHandler.isLogin == true) {
+    await Future.delayed(Duration(seconds: 5));
+    if (PrefferenceHandle.isLogin == true) {
       context.push(HomePageTugas11());
     } else {
       context.push(LoginDay18SQFLITE());
@@ -32,7 +35,7 @@ class _SplashScreenTugasDay17State extends State<SplashScreenTugasDay17> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.black,
       body: Center(child: Lottie.asset("assets/Animations/loading.json")),
     );
   }

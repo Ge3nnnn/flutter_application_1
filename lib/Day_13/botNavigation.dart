@@ -1,5 +1,6 @@
 import 'package:bottom_navigator/bottom_navigator.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Day_17/views/logout_page.dart';
 import 'package:flutter_application_1/Tugas/cobasendiri_tugas6_flutter.dart';
 import 'package:flutter_application_1/Tugas/tugas3_flutter.dart';
 import 'package:flutter_application_1/Tugas/tugas4_flutter.dart';
@@ -25,6 +26,7 @@ class _BottomNavDay13State extends State<BottomNavDay13> {
     Tugas4Flutter(),
     Tugas3Flutter(),
     Tugas6Flutter(),
+    LogoutPageDay17(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -39,6 +41,7 @@ class _BottomNavDay13State extends State<BottomNavDay13> {
           BottomNavItem(icon: Icons.school_outlined, label: 'Sekolah'),
           BottomNavItem(icon: Icons.mosque, label: 'Masjid'),
           BottomNavItem(icon: Icons.map_outlined, label: 'Peta'),
+          BottomNavItem(icon: Icons.logout, label: 'Logout'),
         ],
       ),
       appBar: AppBar(

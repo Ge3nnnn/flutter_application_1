@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-
-import 'package:flutter_application_1/Day_11/Create_Acc.dart';
-import 'package:flutter_application_1/Day_11/lupapasword.dart';
-import 'package:flutter_application_1/Day_13/botNavigation.dart';
 import 'package:flutter_application_1/Day_13/drawer.dart';
-import 'package:flutter_application_1/Tugas/Tugas8_Flutter.dart';
+import 'package:flutter_application_1/Day_17/service/prefference_handle.dart';
+import 'package:flutter_application_1/Tugas/Tugas_11/service/prefference_tugas.dart';
+
+import 'package:flutter_application_1/Tugas/Tugas_11/views/home_page.dart';
 import 'package:flutter_application_1/Tugas/tugas7_flutter.dart';
+import 'package:flutter_application_1/extension/navigator.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Tugas6Ynaglain extends StatelessWidget {
-  const Tugas6Ynaglain({super.key});
+class LoginDay17 extends StatelessWidget {
+  const LoginDay17({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -64,10 +64,11 @@ class Tugas6Ynaglain extends StatelessWidget {
               SizedBox(height: 10),
               TextButton(
                 onPressed: () {
-                  Navigator.push(
+                  PrefferenceHandler.setLogin(true);
+                  ScaffoldMessenger.of(
                     context,
-                    MaterialPageRoute(builder: (context) => Tugas8Flutter()),
-                  );
+                  ).showSnackBar(SnackBar(content: Text("Berhasil Login")));
+                  context.push(HomePageTugas11());
                 },
                 child: Container(
                   width: 375,

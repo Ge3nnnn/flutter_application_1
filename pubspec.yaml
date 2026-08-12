@@ -38,6 +38,25 @@ dependencies:
   shimmer_animation: ^2.2.2+1
   #buat animasi gege
   flutter_staggered_animations: ^1.1.1
+  #Font milik Google
+  google_fonts: ^8.2.0
+  #Bottom Nav Bar
+  bottom_navigator: ^0.0.5
+  #introvert
+  intl: ^0.20.3
+  #Navigation Button
+  bottom_navy_bar: ^6.1.0
+  #Lottie
+  lottie: ^3.5.1
+  # Shared (buat ngimpan data)
+  shared_preferences: ^2.5.5
+  #SQFLITE
+  sqflite: ^2.4.3
+  #path
+  path: ^1.9.1
+
+
+
 
 dev_dependencies:
   flutter_test:
@@ -64,6 +83,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/Images/
+    - assets/Animations/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -78,9 +98,9 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Schyler
+    - family: aileron.regular
       fonts:
-        - asset: assets\Font\Font_yang_lain.ttf
+        - asset: assets\Font\aileron.regular.otf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

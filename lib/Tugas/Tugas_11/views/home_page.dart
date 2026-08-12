@@ -1,6 +1,7 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Day_14/halamantentang.dart';
+import 'package:flutter_application_1/Day_18/views/data_user_day18.dart';
 
 import 'package:flutter_application_1/Tugas/Tugas_11/views/logout_page.dart';
 import 'package:flutter_application_1/Tugas/tugas7_flutter.dart';
@@ -24,6 +25,7 @@ class _Tugas9FlutterState extends State<HomePageTugas11> {
     Tugas7Flutter(),
     TentangSayaTugas8Flutter(),
     LogoutPageTugasDay17(),
+    DataUserDay18(),
   ];
 
   @override
@@ -51,6 +53,11 @@ class _Tugas9FlutterState extends State<HomePageTugas11> {
           BottomNavyBarItem(
             icon: Icon(Icons.logout),
             title: Text('Keluar'),
+            activeColor: const Color.fromARGB(255, 0, 0, 0),
+          ),
+          BottomNavyBarItem(
+            icon: Icon(Icons.person_remove),
+            title: Text('Person'),
             activeColor: const Color.fromARGB(255, 0, 0, 0),
           ),
         ],
