@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Tugas/Tugas_day_32_/model/post_model.dart';
+import 'package:flutter_application_1/Tugas/Tugas_day_32_/services/cart_service.dart';
+import 'package:flutter_application_1/Tugas/Tugas_day_32_/views/cart_page.dart';
 import 'package:intl/intl.dart';
 
 class DetailPage extends StatefulWidget {
@@ -105,6 +107,34 @@ class _DetailPageState extends State<DetailPage> {
               );
             },
           ),
+          ListenableBuilder(
+            listenable: CartService.instance,
+            builder: (context, child) {
+              final cartCount = CartService.instance.totalItemCount;
+              return IconButton(
+                icon: Badge(
+                  isLabelVisible: cartCount > 0,
+                  label: Text(
+                    cartCount > 99 ? '99+' : '$cartCount',
+                    style: const TextStyle(fontSize: 10, color: Colors.white),
+                  ),
+                  backgroundColor: Colors.redAccent,
+                  child: const Icon(Icons.shopping_cart_outlined,
+                      color: Colors.black87),
+                ),
+                tooltip: 'Keranjang',
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const CartPage(),
+                    ),
+                  );
+                },
+              );
+            },
+          ),
+          const SizedBox(width: 4),
         ],
       ),
       body: SingleChildScrollView(
@@ -566,11 +596,29 @@ class _DetailPageState extends State<DetailPage> {
                 flex: 2,
                 child: OutlinedButton.icon(
                   onPressed: () {
+                    final added = CartService.instance.addToCart(product);
+                    ScaffoldMessenger.of(context).hideCurrentSnackBar();
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
-                        content: Text('${product.title} ditambahkan ke keranjang!'),
+                        content: Text(
+                          added
+                              ? '${product.title} ditambahkan ke keranjang!'
+                              : 'Gagal: Stok tidak mencukupi atau telah mencapai batas',
+                        ),
                         duration: const Duration(seconds: 2),
-                        backgroundColor: Colors.green[700],
+                        backgroundColor: added ? Colors.green[700] : Colors.redAccent,
+                        action: SnackBarAction(
+                          label: 'Lihat Keranjang',
+                          textColor: Colors.white,
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const CartPage(),
+                              ),
+                            );
+                          },
+                        ),
                       ),
                     );
                   },
@@ -591,11 +639,11 @@ class _DetailPageState extends State<DetailPage> {
                 flex: 3,
                 child: ElevatedButton.icon(
                   onPressed: () {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: Text('Membeli ${product.title}...'),
-                        duration: const Duration(seconds: 2),
-                        backgroundColor: Colors.blue[800],
+                    CartService.instance.addToCart(product);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const CartPage(),
                       ),
                     );
                   },

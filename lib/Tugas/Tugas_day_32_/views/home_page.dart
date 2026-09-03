@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Tugas/Tugas_day_32_/model/post_model.dart';
 import 'package:flutter_application_1/Tugas/Tugas_day_32_/services/api_service.dart';
+import 'package:flutter_application_1/Tugas/Tugas_day_32_/services/cart_service.dart';
 import 'package:flutter_application_1/Tugas/Tugas_day_32_/services/dio_clients.dart';
+import 'package:flutter_application_1/Tugas/Tugas_day_32_/views/cart_page.dart';
 import 'package:flutter_application_1/Tugas/Tugas_day_32_/views/detail_page.dart';
 
 class HomeScreenTugas15 extends StatefulWidget {
-  const HomeScreenTugas15({super.key});
+  final VoidCallback? onNavigateToCart;
+
+  const HomeScreenTugas15({super.key, this.onNavigateToCart});
 
   @override
   State<HomeScreenTugas15> createState() => _HomeScreenTugas15State();
@@ -54,6 +58,40 @@ class _HomeScreenTugas15State extends State<HomeScreenTugas15> {
         centerTitle: true,
         backgroundColor: Colors.white,
         elevation: 0.5,
+        actions: [
+          ListenableBuilder(
+            listenable: CartService.instance,
+            builder: (context, child) {
+              final cartCount = CartService.instance.totalItemCount;
+              return IconButton(
+                icon: Badge(
+                  isLabelVisible: cartCount > 0,
+                  label: Text(
+                    cartCount > 99 ? '99+' : '$cartCount',
+                    style: const TextStyle(fontSize: 10, color: Colors.white),
+                  ),
+                  backgroundColor: Colors.redAccent,
+                  child: const Icon(Icons.shopping_cart_outlined,
+                      color: Colors.blue),
+                ),
+                tooltip: 'Keranjang Belanja',
+                onPressed: () {
+                  if (widget.onNavigateToCart != null) {
+                    widget.onNavigateToCart!();
+                  } else {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const CartPage(),
+                      ),
+                    );
+                  }
+                },
+              );
+            },
+          ),
+          const SizedBox(width: 6),
+        ],
       ),
       body: Column(
         children: [
@@ -278,26 +316,77 @@ class _HomeScreenTugas15State extends State<HomeScreenTugas15> {
                                         },
                                       ),
                                     ),
-                                    if (product.discountPercentage > 0)
-                                      Positioned(
-                                        top: 6,
-                                        right: 6,
-                                        child: Container(
-                                          padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-                                          decoration: BoxDecoration(
-                                            color: Colors.redAccent,
-                                            borderRadius: BorderRadius.circular(6),
-                                          ),
-                                          child: Text(
-                                            '-${product.discountPercentage.toStringAsFixed(0)}%',
-                                            style: const TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 10,
-                                              fontWeight: FontWeight.bold,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
+                                     if (product.discountPercentage > 0)
+                                       Positioned(
+                                         top: 6,
+                                         right: 6,
+                                         child: Container(
+                                           padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                                           decoration: BoxDecoration(
+                                             color: Colors.redAccent,
+                                             borderRadius: BorderRadius.circular(6),
+                                           ),
+                                           child: Text(
+                                             '-${product.discountPercentage.toStringAsFixed(0)}%',
+                                             style: const TextStyle(
+                                               color: Colors.white,
+                                               fontSize: 10,
+                                               fontWeight: FontWeight.bold,
+                                             ),
+                                           ),
+                                         ),
+                                       ),
+                                     Positioned(
+                                       bottom: 6,
+                                       right: 6,
+                                       child: Material(
+                                         color: Colors.white,
+                                         shape: const CircleBorder(),
+                                         elevation: 2,
+                                         child: InkWell(
+                                           customBorder: const CircleBorder(),
+                                           onTap: () {
+                                             final added = CartService.instance.addToCart(product);
+                                             ScaffoldMessenger.of(context).hideCurrentSnackBar();
+                                             ScaffoldMessenger.of(context).showSnackBar(
+                                               SnackBar(
+                                                 content: Text(
+                                                   added
+                                                       ? '${product.title} ditambahkan ke keranjang'
+                                                       : 'Stok tidak mencukupi atau telah mencapai batas',
+                                                 ),
+                                                 duration: const Duration(seconds: 2),
+                                                 behavior: SnackBarBehavior.floating,
+                                                 action: SnackBarAction(
+                                                   label: 'Lihat',
+                                                   textColor: Colors.amberAccent,
+                                                   onPressed: () {
+                                                     if (widget.onNavigateToCart != null) {
+                                                       widget.onNavigateToCart!();
+                                                     } else {
+                                                       Navigator.push(
+                                                         context,
+                                                         MaterialPageRoute(
+                                                           builder: (context) => const CartPage(),
+                                                         ),
+                                                       );
+                                                     }
+                                                   },
+                                                 ),
+                                               ),
+                                             );
+                                           },
+                                           child: const Padding(
+                                             padding: EdgeInsets.all(6),
+                                             child: Icon(
+                                               Icons.add_shopping_cart,
+                                               size: 16,
+                                               color: Colors.blue,
+                                             ),
+                                           ),
+                                         ),
+                                       ),
+                                     ),
                                   ],
                                 ),
                               ),
