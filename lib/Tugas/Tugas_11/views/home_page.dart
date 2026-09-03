@@ -1,11 +1,7 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Day_14/halamantentang.dart';
-import 'package:flutter_application_1/Day_18/views/data_user_day18.dart';
 
-import 'package:flutter_application_1/Tugas/Tugas_11/views/logout_page.dart';
 import 'package:flutter_application_1/Tugas/Tugas_day_32_/views/home_page.dart';
-import 'package:flutter_application_1/Tugas/tugas7_flutter.dart';
 
 class HomePageTugas11 extends StatefulWidget {
   const HomePageTugas11({super.key});

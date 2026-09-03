@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Tugas/Tugas_11/service/prefference_tugas.dart';
-import 'package:flutter_application_1/Tugas/Tugas_day_32_/views/botom_navi_dummy_store.dart';
+import 'package:flutter_application_1/Tugas_day_33/view/auth_gate.dart';
 import 'package:intl/date_symbol_data_local.dart';
 
 void main() async {
-  await initializeDateFormatting("id_ID", null);
   WidgetsFlutterBinding.ensureInitialized();
+  await initializeDateFormatting("id_ID", null);
   await PrefferenceHandler.init();
   runApp(const MyApp());
 }
@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
       //   "/": (context) => SplashScreenTugasDay17(),
       //   "/home": (context) => HomeScreenTugas15(),
       // },
-      home: BotomNaviDummyStore(),
+      home: const AuthGateDay33(),
     );
   }
 }
