@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:shimmer_animation/shimmer_animation.dart';
 
 class TestCounterDay10 extends StatefulWidget {
+  const TestCounterDay10({super.key});
+
   @override
   MyCounterState createState() => MyCounterState();
 }

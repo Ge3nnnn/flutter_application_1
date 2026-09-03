@@ -34,7 +34,7 @@ class _KategoriProdukTugas7FlutterState
             ),
             Text("Anda Memilih $_selected"),
             SizedBox(height: 10),
-            Container(
+            SizedBox(
               height: 200,
               width: 200,
               child: _selected == "Elektronik"

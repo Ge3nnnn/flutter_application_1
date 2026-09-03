@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Day_13/input_widget.dart';
 import 'package:flutter_application_1/Tugas/tugas3_flutter.dart';
-import 'package:flutter_application_1/Tugas/tugas4_flutter.dart';
 import 'package:flutter_application_1/Tugas/tugas5__flutter.dart';
-import 'package:flutter_application_1/Tugas/tugas6_flutter_facebook.dart';
 import 'package:flutter_application_1/extension/navigator.dart';
 
 class DrawerDay13 extends StatefulWidget {

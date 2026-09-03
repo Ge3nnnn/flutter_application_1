@@ -20,7 +20,7 @@ class _Tugas9FlutterState extends State<Tugas8Flutter> {
     setState(() {});
   }
 
-  List<Widget> _widgetOptions = [
+  final List<Widget> _widgetOptions = [
     Tugas7Flutter(),
     TentangSayaTugas8Flutter(),
     LogoutPageDay17(),

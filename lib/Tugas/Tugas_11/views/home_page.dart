@@ -4,6 +4,7 @@ import 'package:flutter_application_1/Day_14/halamantentang.dart';
 import 'package:flutter_application_1/Day_18/views/data_user_day18.dart';
 
 import 'package:flutter_application_1/Tugas/Tugas_11/views/logout_page.dart';
+import 'package:flutter_application_1/Tugas/Tugas_day_32_/views/home_page.dart';
 import 'package:flutter_application_1/Tugas/tugas7_flutter.dart';
 
 class HomePageTugas11 extends StatefulWidget {
@@ -21,12 +22,7 @@ class _Tugas9FlutterState extends State<HomePageTugas11> {
     setState(() {});
   }
 
-  List<Widget> _widgetOptions = [
-    Tugas7Flutter(),
-    TentangSayaTugas8Flutter(),
-    LogoutPageTugasDay17(),
-    DataUserDay18(),
-  ];
+  final List<Widget> _widgetOptions = [HomeScreenTugas15()];
 
   @override
   Widget build(BuildContext context) {

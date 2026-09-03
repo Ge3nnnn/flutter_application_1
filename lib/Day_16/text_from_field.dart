@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Day_16/home_abal-alab.dart';
-import 'package:flutter_application_1/Tugas/tugas6_flutter_facebook.dart';
 import 'package:flutter_application_1/extension/navigator.dart';
 import 'package:lottie/lottie.dart';
 

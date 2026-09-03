@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Day_18/views/login_day18.dart';
 import 'package:flutter_application_1/Tugas/Tugas_11/service/prefference_tugas.dart';
 import 'package:flutter_application_1/Tugas/Tugas_11/views/home_page.dart';
-import 'package:flutter_application_1/Tugas/Tugas_11/views/login_page.dart';
 import 'package:flutter_application_1/extension/navigator.dart';
 import 'package:lottie/lottie.dart';
 
