@@ -1,4 +1,3 @@
-import 'package:bottom_navigator/bottom_navigator.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Day_14/halamantentang.dart';
